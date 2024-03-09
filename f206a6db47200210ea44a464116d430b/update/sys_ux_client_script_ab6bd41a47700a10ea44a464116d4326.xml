@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Safety Landing Page Safety Admins">1b75805e47fcc610ea44a464116d43bc</macroponent>
+        <name>dropdown_1/items</name>
+        <preset/>
+        <required_translations>[
+    
+]</required_translations>
+        <script><![CDATA[function evaluateProperty({api, helpers}) {
+var jsonObj = api.data.aggregation_query_1.output;
+var numOfLoc = jsonObj.data.GlideAggregate_Query.length;
+var jsonVar = "[";
+for (var i = 0; i < numOfLoc; i++) {
+jsonVar = jsonVar + '{"id":"' +
+jsonObj.data.GlideAggregate_Query[i].groupBy[0].value + '","label":"' +
+jsonObj.data.GlideAggregate_Query[i].groupBy[0].displayValue + '"}';
+if (i < (numOfLoc - 1)) {
+jsonVar = jsonVar + ",";
+}
+}
+jsonVar = jsonVar + ']';
+return jsonVar;
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-09 14:01:52</sys_created_on>
+        <sys_id>ab6bd41a47700a10ea44a464116d4326</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>dropdown_1/items</sys_name>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>sys_ux_client_script_ab6bd41a47700a10ea44a464116d4326</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-09 14:01:52</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+</record_update>

@@ -869,8 +869,30 @@
                             ]
                         },
                         "fixedQuery": {
-                            "type": "JSON_LITERAL",
-                            "value": "state!=closed^opened_byDYNAMIC90d1921e5f510100a9ad2572f2b477fe"
+                            "transform": {
+                                "operands": {
+                                    "container": [
+                                        {
+                                            "type": "JSON_LITERAL",
+                                            "value": "state!=closed^location="
+                                        },
+                                        {
+                                            "binding": {
+                                                "address": [
+                                                    "look_up_record_1",
+                                                    "result",
+                                                    "location",
+                                                    "value"
+                                                ]
+                                            },
+                                            "type": "DATA_OUTPUT_BINDING"
+                                        }
+                                    ],
+                                    "type": "LIST_CONTAINER"
+                                },
+                                "operator": "CONCAT"
+                            },
+                            "type": "CLIENT_TRANSFORM"
                         },
                         "groupByField": {
                             "type": "JSON_LITERAL",
@@ -1242,10 +1264,7 @@
             
         ],
         "inputValues": {
-            "recordId": {
-                "type": "JSON_LITERAL",
-                "value": ""
-            },
+            "recordId": null,
             "returnFieldMetadata": {
                 "type": "JSON_LITERAL",
                 "value": false
@@ -1261,61 +1280,6 @@
             "table": {
                 "type": "JSON_LITERAL",
                 "value": "sys_user"
-            }
-        },
-        "readEvaluationMode": "EAGER"
-    },
-    {
-        "definition": {
-            "id": "546cccd25310101024e5ddeeff7b123b",
-            "type": "GRAPHQL"
-        },
-        "dependencies": {},
-        "elementId": "aggregation_query_1",
-        "elementLabel": "Aggregation Query 1",
-        "eventMappings": [
-            
-        ],
-        "inputValues": {
-            "avgField": {
-                "type": "JSON_LITERAL"
-            },
-            "encodedQuery": {
-                "type": "JSON_LITERAL",
-                "value": "state!=closed"
-            },
-            "groupBy": {
-                "type": "JSON_LITERAL",
-                "value": "location"
-            },
-            "having": {
-                "type": "JSON_LITERAL",
-                "value": null
-            },
-            "maxField": {
-                "type": "JSON_LITERAL"
-            },
-            "minField": {
-                "type": "JSON_LITERAL"
-            },
-            "orderBy": {
-                "type": "JSON_LITERAL",
-                "value": ""
-            },
-            "queryCategory": {
-                "type": "JSON_LITERAL",
-                "value": null
-            },
-            "returnRowCount": {
-                "type": "JSON_LITERAL",
-                "value": true
-            },
-            "sumField": {
-                "type": "JSON_LITERAL"
-            },
-            "table": {
-                "type": "JSON_LITERAL",
-                "value": "x_1173133_safety_issues"
             }
         },
         "readEvaluationMode": "EAGER"
@@ -1402,14 +1366,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-03-02 16:27:22</sys_created_on>
         <sys_id>03874d404734c210ea44a464116d4318</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>56</sys_mod_count>
         <sys_name>Default</sys_name>
         <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
         <sys_policy/>
         <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
         <sys_update_name>sys_ux_macroponent_03874d404734c210ea44a464116d4318</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-09 11:09:24</sys_updated_on>
+        <sys_updated_on>2024-03-09 13:32:12</sys_updated_on>
     </sys_ux_macroponent>
     <sys_translated_text action="delete_multiple" query="documentkey=03874d404734c210ea44a464116d4318"/>
 </record_update>

@@ -1971,8 +1971,27 @@
                             ]
                         },
                         "fixedQuery": {
-                            "type": "JSON_LITERAL",
-                            "value": "state!=closed"
+                            "transform": {
+                                "operands": {
+                                    "container": [
+                                        {
+                                            "type": "JSON_LITERAL",
+                                            "value": "state!=closed^location="
+                                        },
+                                        {
+                                            "binding": {
+                                                "address": [
+                                                    "selected_location"
+                                                ]
+                                            },
+                                            "type": "STATE_BINDING"
+                                        }
+                                    ],
+                                    "type": "LIST_CONTAINER"
+                                },
+                                "operator": "CONCAT"
+                            },
+                            "type": "CLIENT_TRANSFORM"
                         },
                         "groupByField": {
                             "type": "JSON_LITERAL",
@@ -2184,7 +2203,7 @@
                             "value": {
                                 "code": null,
                                 "comment": "",
-                                "message": "All Open Issues"
+                                "message": "Open Safety Issues by Location"
                             }
                         },
                         "maxCharLimit": {
@@ -2264,6 +2283,156 @@
                     },
                     "slot": null,
                     "styles": null
+                },
+                {
+                    "definition": {
+                        "id": "22c67d9a1e515fef66442e1469bed3a2",
+                        "type": "MACROPONENT"
+                    },
+                    "elementId": "dropdown_1",
+                    "elementLabel": "Dropdown 1",
+                    "eventMappings": [
+                        {
+                            "eventMappingId": "cltkffwenhaaggiidddffhhqtwgbbdfiik",
+                            "isConfiguration": false,
+                            "offRowStorageId": null,
+                            "sourceEventApiName": "sn_dropdown.NOW_DROPDOWN#SELECTED_ITEMS_SET",
+                            "sourceEventCorrelationId": null,
+                            "sourceEventDefinition": {
+                                "apiName": "sn_dropdown.NOW_DROPDOWN#SELECTED_ITEMS_SET",
+                                "id": null,
+                                "type": "UXEVENT"
+                            },
+                            "sourceEventSysId": null,
+                            "targets": [
+                                {
+                                    "broker": null,
+                                    "clientScript": null,
+                                    "conditional": null,
+                                    "declarativeAction": null,
+                                    "event": {
+                                        "apiName": "sn_uxf.MACROPONENT_STATE_UPDATE_REQUESTED",
+                                        "payload": {
+                                            "type": "JSON_LITERAL",
+                                            "value": {
+                                                "propName": "selected_location",
+                                                "value": "@payload.value"
+                                            }
+                                        },
+                                        "sysId": "32408b42ff7a10109046e490703bf176"
+                                    },
+                                    "operation": null,
+                                    "targetId": "cltkffwenhaaggiieddffhhqrtnpqijjgg",
+                                    "type": "EVENT"
+                                }
+                            ]
+                        }
+                    ],
+                    "isHidden": {
+                        "type": "JSON_LITERAL",
+                        "value": null
+                    },
+                    "preset": null,
+                    "propertyValues": {
+                        "bare": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "configAria": {
+                            "type": "JSON_LITERAL",
+                            "value": null
+                        },
+                        "disabled": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "hideCaret": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "hideLabel": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "icon": {
+                            "type": "JSON_LITERAL",
+                            "value": null
+                        },
+                        "items": {
+                            "script": {
+                                "apiVersion": "2.0.0",
+                                "controllerElementId": null,
+                                "inlineScript": "function evaluateProperty({api, helpers}) {\nvar jsonObj = api.data.aggregation_query_1.output;\nvar numOfLoc = jsonObj.data.GlideAggregate_Query.length;\nvar jsonVar = \"[\";\nfor (var i = 0; i &lt; numOfLoc; i++) {\njsonVar = jsonVar + '{\"id\":\"' +\njsonObj.data.GlideAggregate_Query[i].groupBy[0].value + '\",\"label\":\"' +\njsonObj.data.GlideAggregate_Query[i].groupBy[0].displayValue + '\"}';\nif (i &lt; (numOfLoc - 1)) {\njsonVar = jsonVar + \",\";\n}\n}\njsonVar = jsonVar + ']';\nreturn jsonVar;\n}",
+                                "scriptSysId": "ab6bd41a47700a10ea44a464116d4326",
+                                "target": null
+                            },
+                            "type": "CLIENT_TRANSFORM_SCRIPT"
+                        },
+                        "label": {
+                            "type": "TRANSLATION_LITERAL",
+                            "value": {
+                                "code": null,
+                                "comment": "",
+                                "message": ""
+                            }
+                        },
+                        "labelPosition": {
+                            "type": "JSON_LITERAL",
+                            "value": "top"
+                        },
+                        "labelSize": {
+                            "type": "JSON_LITERAL",
+                            "value": ""
+                        },
+                        "opened": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "panelFitProps": {
+                            "type": "JSON_LITERAL",
+                            "value": {}
+                        },
+                        "placeholder": {
+                            "type": "TRANSLATION_LITERAL",
+                            "value": {
+                                "code": null,
+                                "comment": "",
+                                "message": "Select a Location to filter Safety Issues"
+                            }
+                        },
+                        "search": {
+                            "type": "JSON_LITERAL",
+                            "value": "none"
+                        },
+                        "select": {
+                            "type": "JSON_LITERAL",
+                            "value": "single"
+                        },
+                        "selectedItems": {
+                            "type": "JSON_LITERAL",
+                            "value": [
+                                
+                            ]
+                        },
+                        "showPadding": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "size": {
+                            "type": "JSON_LITERAL",
+                            "value": "md"
+                        },
+                        "tooltipContent": {
+                            "type": "JSON_LITERAL",
+                            "value": null
+                        },
+                        "variant": {
+                            "type": "JSON_LITERAL",
+                            "value": "secondary"
+                        }
+                    },
+                    "slot": null,
+                    "styles": null
                 }
             ],
             "layout": {
@@ -2278,6 +2447,12 @@
                                 "border-style": "solid",
                                 "border-width": "var(--now-static-space--xxs)",
                                 "box-shadow": "var(--now-static-drop-shadow--md)"
+                            }
+                        },
+                        {
+                            "element_id": "dropdown_1",
+                            "styles": {
+                                "align-self": "center"
                             }
                         }
                     ],
@@ -2476,9 +2651,6 @@
   "message" : "&lt;p style=\"margin: 0in 0in 8pt; line-height: 115%; font-size: 12pt; font-family: Aptos, sans-serif; text-align: center;\"&gt;&lt;strong&gt;&lt;span style=\"font-size: 36.0pt; line-height: 115%; font-family: Aptos, sans-serif; color: white;\"&gt;Safety Issues Admin Workspace&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;",
   "comment" : ""
 }, {
-  "message" : "All Open Issues",
-  "comment" : ""
-}, {
   "message" : "Issues",
   "comment" : ""
 }, {
@@ -2489,6 +2661,12 @@
   "comment" : ""
 }, {
   "message" : "Open Issues by Priority",
+  "comment" : ""
+}, {
+  "message" : "Open Safety Issues by Location",
+  "comment" : ""
+}, {
+  "message" : "Select a Location to filter Safety Issues",
   "comment" : ""
 }, {
   "message" : "Unassigned Safety Issues",
@@ -2510,14 +2688,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-03-09 11:25:05</sys_created_on>
         <sys_id>1b75805e47fcc610ea44a464116d43bc</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>Safety Landing Page Safety Admins</sys_name>
         <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
         <sys_policy/>
         <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
         <sys_update_name>sys_ux_macroponent_1b75805e47fcc610ea44a464116d43bc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-09 12:47:16</sys_updated_on>
+        <sys_updated_on>2024-03-09 14:53:29</sys_updated_on>
     </sys_ux_macroponent>
     <sys_translated_text action="delete_multiple" query="documentkey=1b75805e47fcc610ea44a464116d43bc"/>
 </record_update>
