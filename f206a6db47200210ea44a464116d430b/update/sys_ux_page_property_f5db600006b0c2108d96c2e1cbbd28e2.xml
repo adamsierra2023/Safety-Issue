@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>sys_ux_applicability sys_id for Workspace audience</description>
+        <name>wbApplicabilityConfigId</name>
+        <page display_value="Safety SW">bddb6000d1b0c21022ef41daba7ad0f0</page>
+        <required_translations/>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-02 14:26:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>f5db600006b0c2108d96c2e1cbbd28e2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>wbApplicabilityConfigId</sys_name>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>sys_ux_page_property_f5db600006b0c2108d96c2e1cbbd28e2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-02 14:26:22</sys_updated_on>
+        <type>string</type>
+        <unique_name>x_1173133_safety.bddb6000d1b0c21022ef41daba7ad0f0.root.wbApplicabilityConfigId</unique_name>
+        <value>bedbe00047b0c210ea44a464116d4310</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=f5db600006b0c2108d96c2e1cbbd28e2"/>
+</record_update>

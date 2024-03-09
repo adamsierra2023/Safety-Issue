@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="m2m_app_config_theme">
+    <m2m_app_config_theme action="INSERT_OR_UPDATE">
+        <applicability display_value="Public">78594aa70ea0421059f7429dde3b8117</applicability>
+        <order>0</order>
+        <sys_class_name>m2m_app_config_theme</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2024-03-01 07:57:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>34594aa7daa042102fc2c87ced850819</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>m2m_app_config_theme_34594aa7daa042102fc2c87ced850819</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2024-03-01 07:57:48</sys_updated_on>
+        <theme display_value="Light Theme">3c594aa73da0421010913f8be69ab317</theme>
+        <ux_app_configuration display_value="Custom Portal App Config">64590aa747a04210ea44a464116d43b8</ux_app_configuration>
+    </m2m_app_config_theme>
+</record_update>
