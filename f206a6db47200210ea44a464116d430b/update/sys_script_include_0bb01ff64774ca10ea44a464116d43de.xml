@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1173133_safety.LocationByRole</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Lab 7.2 Restrict Locations Options.</description>
+        <name>LocationByRole</name>
+        <script><![CDATA[var LocationsByRole = Class.Create();
+LocationsByRole.prototype = {
+initialize: function(){
+	//Retrieve the logged-in user's 'User [sys_user]' record
+	this.infogedInUser = new GlideRecord('sys_user');
+	this.infogedInUser.get(gs.getUserID());
+},
+forCMDB: function() {
+	var refQual = "";
+		if (gs.hasRole('admin')) {
+		//User with this role may assign CIs to ALL locations
+		refQual += "EQ";
+} 
+		if (gs.hasRole('asset_mgr_local')) {
+		//User with this role may assign CIs to LOCAL locations
+		refQual += "parent=" + this.infogedInUser.location.parent + "^EQ";
+
+}
+		if (gs.hasRole('asset_mgr_corporate')) {
+		//User with this role may assign CIs to LOCAL locations
+		refQual += "parent=" + this.infogedInUser.location.parent + "^EQ";
+}
+return refQual;
+},
+type: 'LocationsByRole'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-11 15:58:58</sys_created_on>
+        <sys_id>0bb01ff64774ca10ea44a464116d43de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>LocationByRole</sys_name>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>sys_script_include_0bb01ff64774ca10ea44a464116d43de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-11 15:58:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>false</active>
+        <api_name>x_1173133_safety.logPropertyValue</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Lab 7.1 server-side logging</description>
+        <name>logPropertyValue</name>
+        <script><![CDATA[function logPropertyValue(str) {
+	this.debug = false;
+	this.debPrefix = "AS: ";
+
+	if(this.debug){
+		gs.info(this.debPrefix + str);
+	}
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-11 05:43:52</sys_created_on>
+        <sys_id>15f7cd3247f88a10ea44a464116d4329</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>logPropertyValue</sys_name>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>sys_script_include_15f7cd3247f88a10ea44a464116d4329</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-11 12:18:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

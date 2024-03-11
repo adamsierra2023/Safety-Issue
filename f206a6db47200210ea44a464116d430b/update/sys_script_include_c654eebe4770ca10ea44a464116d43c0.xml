@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1173133_safety.hasRoleExactly</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Lab 7.1 hasRoleExactly Server-Side logging</description>
+        <name>hasRoleExactly</name>
+        <script><![CDATA[function hasRoleExactly(userSysId, roleString){
+	try {	
+
+		var roleGr = new GlideRecord("sys_user_role");
+		if (roleGr.get('name', roleString)) {
+
+			var role = roleGr.getValue('sys_id');
+			var gr = new GlideRecord("sys_user_has_role");
+			gr.addQuery("user", userSysId);
+			gr.addQuery("role", role);
+			gr.query();
+
+			if (gr.next) {
+				return true;
+			} else {
+				return false;
+			}
+
+		}
+
+	} catch (error) {
+
+		gs.error (" Error in script include hasRoleExactly: " + error);
+	}
+
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-11 12:45:09</sys_created_on>
+        <sys_id>c654eebe4770ca10ea44a464116d43c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>hasRoleExactly</sys_name>
+        <sys_package display_value="Safety" source="x_1173133_safety">f206a6db47200210ea44a464116d430b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Safety">f206a6db47200210ea44a464116d430b</sys_scope>
+        <sys_update_name>sys_script_include_c654eebe4770ca10ea44a464116d43c0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-11 12:45:09</sys_updated_on>
+    </sys_script_include>
+</record_update>
